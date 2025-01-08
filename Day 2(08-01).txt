@@ -1,0 +1,188 @@
+Code standards:-
+
+-> class,interface,enum must start with capital letters
+-> methods and variable names must start with small letters
+-> In all the above if more than one word then every next word first letter is capital eg: raiseSalary()
+-> package name must be all in small letters
+-> constant name must be all in capital letters and if more than one words then it is separated by underscore
+
+jdk complie source code to byte code
+jre byte code to machine code
+
+path => java code stored
+classpath => .class file stored
+
+Datatypes:-
+----------
+
+constant : final
+Variables : primitive(
+Numeric => whole : int(4),short(2),long(8),byte(1)
+	   Real : float(4),double(8)
+Non Numeric => char(2),Boolean(1) )
+
+	  Non primitive(Arrays,class,interface,enum)
+
+there is not short int or long int
+eg: short int a=10; (error)
+
+byte => -128 to 127
+there is no unsigned keyword in java.
+
+float a=3.142f;
+long a=1234567890L;
+
+if(0) or if(1)=> error
+only need to mention true or false need to mention
+strightly tight language
+
+----> There is no const keyword in java. to make constant use final keyword.
+
+---------------------------------------------------------
+
+control statements:-
+----------------
+
+Conditional :if,if-else,if-else-if,nested-if,switch
+
+Looping : for,while,do-while
+
+Branching/Jumping : break,continue,return
+there is no goto in java
+Break is used to come out of the block
+
+--------------------------------------------------------
+
+operators:-
+unary: ++,--
+binary: 
+ternary:
+
+Arithmetic : +,-,*,/,%
+Logical    : &&,||,!
+Bitwise    : &,|,^
+Relational : <,>,<=,>=,==,!=
+Incr/Decr  : ++,--
+Shift      : <<(multiple by 2),>>(divide by 2),>>>(
+Assignment : =,+=,-=,*=,/=,%=
+Conditional: res=(a>b)?a:b 
+
+shift operator(<<,>>) does not shift sign bit
+>>> => shift signbit also shifted
+
+
+=================================================
+
+
+
+if class is declared as public then class name and file name should be same else no need to be same.
+
+
+if single program have more than one main method it doesnot produce error.if i need to run program run with its respective class name.
+
+we can call the main method => classname.main(args);
+
+javap classname command to see .class file contents
+
+default value:-
+
+object - Null
+bool - false
+char-blank
+int - 0
+
+this keywords is used to distinguish the variable.
+
+if we don't provide any constructor then default constructor is automatically added by complier.If we have parameterized constructor then the complier does not add default constructor.
+
+
+if i need to call the constructor from another one constructor then call by using this(parameters) method.
+if we use the this() method then it must be first stmt in the constructor.
+
+---------------------------------
+
+Array:-
+
+
+Person p[]=new Person[5];
+
+for(int i=0;i<p.length;i++)
+{
+	p[i]=new Person();
+	p[i].name=user[i];
+}
+
+for(Person person : p)
+{
+	S.O.P(person.name);
+}
+
+
+in java array is an object
+
+create array in java => int arr[]=new int[10];
+
+arr.length => find len of arr
+rows dimension is must have in java
+
+int arr[][]=new int[3][]
+
+arr[0]=new int[4]
+arr[1]=new int[2]
+arr[2]=new int[3]
+
+here three row is created with different col.
+
+Jagged array is a array where every row with different no.of.col
+
+
+assignment: menu driven application
+
+java EmployeeManagementApp
+
+sal: clerk-20000, programmer-3000,manager-100000
+
+when i call raise sal it will raise all emp sal
+for clerk-2000, pro-5000,manager-15000
+
+
+display will display all emp details
+-------
+1.Create
+2.Display
+3.Raise Salary
+4.Exit
+---------
+Enter choice : 1
+----------------
+
+1.Clerk
+2.Programmer
+3.Manager
+4.Exit
+---------------
+Enter choice : 2
+
+---------
+enter name:AAAA
+enter age :22
+---------
+1.Clerk
+2.Programmer
+3.Manager
+4.Exit
+---------------
+Enter choice : 4
+
+-------------
+1.Create
+2.Display
+3.Raise Salary
+4.Exit
+---------
+Enter choice : 4
+
+Display no.of employee created. keep the variable to track that.
+
+
+

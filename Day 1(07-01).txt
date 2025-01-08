@@ -1,0 +1,48 @@
+java 17 version
+Rest
+git
+docker
+nodejs
+postman
+
+-----------
+
+Noun - class
+verb - methods
+entity - variable
+
+is relation - inheritance (extends)
+has relation - create object
+
+
+OOPs is a concept used in multiple fields
+
+Encapsulation - Data hiding
+use private variable and use setter getter method.
+
+pure encapsulation class - a class have all variables as private and methods as public.
+
+
+
+Abstraction - hiding the  implementation part (logic or behaviour)
+
+Inheritance - inherit the property
+
+polymorphism - same name many forms
+compile time - overloading => different parameters or return type 
+run time - overriding => same method name and same parameters
+
+super class variable can refer subclass object not viceversa.
+
+by default the subclass constructor call the super class constructor
+
+static method is cannot be override.
+
+abstact class - we have constructor in abstract class (Reason : subclass constructor always call super class constructor)
+
+assignment : Employee management application
+3 types - clerk,manager,programmer
+name,age,salary,designation
+
+display()=> Display all details.
+raise salary=> name of person, ask how much amount to raise, then update the salary and display it.
