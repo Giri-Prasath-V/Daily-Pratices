@@ -1,0 +1,106 @@
+Access Modifiers:-
+----------------
+
+public :-
+
+if class is declared as public it can be access by all the class in the same package and also access by classes in another packages.
+
+Cannot mention the class as private or protected. Only mention as public or nothing.
+
+
+private:-
+
+only in that class
+
+protected:-
+
+everyone in the same packages can access + the class refered (directly or indirectly) to it
+
+default -> packet scope (if we don't mention scope it take as default scope)
+
+There is no default keyword as an access modifier. if we need to make it default then no access specifier is mentioned
+
+import:-
+-------
+import is use it will only import the only that package class not import its subpackages class
+
+Packages:-
+--------
+
+-d is used while compile if use use any package
+Eg: javac -d . A.java
+
+Run : java packagename.classname
+
+
+if the class is not mention as public then it is not access by another package.
+
+
+when it is protected then don't create an object to access in its subclass.
+
+constructor can be public,private or protected
+
+
+=======================================================
+
+
+Non access modifiers:-
+--------------------
+
+            Variables           Classes          Methods  
+
+abstract -> no                   yes              yes
+  
+static ->   yes                  no               yes             
+
+final  ->   yes                  yes              yes
+
+
+static block code executed at the time of loading beforing running main block. 
+If we have more static block then it join and execute it.(done by complier)
+
+final variable are constant.
+final class cannot be inherited.
+final methods cannot be overridden.
+
+
+In abstract class there is 0 or more abstract methods.
+For abstract class we can't create object
+The abstract method in abstract call it must be implemented in non abstract subclass.
+Pure abstract class all the methods are abstract.
+Abstract method must be overridden by subclass.
+
+Static variable are shared by all the objects.
+We can access the static variable without creating objects.
+Static methods are called without creating object.
+If we declare a method as static then we call the class without any instances. 
+Static methods can only access the static variable directly.
+Static method only call/invoke the static methods
+Static class in terminology all the variables and methods are static. Eg: Math class,System,collections.
+
+
+Assignment:
+
+class Emp{}
+class clerk {}
+class Pro {}
+class Manager{}
+
+No one should be able to inherite from clerk,pro,manager
+display method cannot be override
+Keep all class in emp.assignment package.
+
+1. Create
+2. Display
+3. Raise Salary
+4. Remove
+5. Exit
+-------------------
+Enter choice :- 4
+Enter emp id : 55
+name
+age
+salary
+design
+Do you really want to remove this employee record (Y/N) : N
+

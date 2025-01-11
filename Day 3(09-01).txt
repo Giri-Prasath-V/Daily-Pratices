@@ -1,0 +1,72 @@
+Why interface added in java?
+
+->Multiple inheritance
+
+nothing is inherited if we use interface.
+
+interface means must implement the methods
+
+->interface is more secure. It hide the implementation details to client.
+
+in interface and final variables must be initialized.
+
+By default the interface variables are public static variables.
+By default the interface methods are public abstract method.
+
+
+constructor vs Methods:-
+-----------------------
+
+Same of class name                  any name
+called when object created          Called after object created
+Must not have return type           Must have return type
+
+
+constructor and method may have same name
+
+similarities:-
+------------
+Exception handling
+Return
+Any logic
+
+
+
+Abstract class     vs                            Interface
+--------------                                   ---------
+=> Methods with body as well as without body         Only abstract methods(without body)
+
+=>Has variables which can be modified              only final variables
+
+=>Can have instance variables                      Only static variables
+
+=>Doesn't Support multiple inheritance             Support MI
+
+=>Variables/methods can have various access modifiers      only public variables/methods
+
+=>Can have constructor                         Don't have constructor
+
+
+interface is faster than abstract class
+
+
+
+Marker Interface:-
+-----------------
+marker interface are empty.
+Eg: Serializable,Cloneable,Remote
+
+interface A{
+}
+
+Functional interface:-
+---------------------
+It has only one abstract method
+Eg:Runnable,Comparable
+
+interface A{
+	public void abc();
+}
+
+
+
