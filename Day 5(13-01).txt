@@ -1,0 +1,60 @@
+Exception Handling:-
+
+Error:-
+
+compile time error(Syntactical):
+
+Runtime error(Logical): 2types 
+	Error : Cannot be handle
+
+	Exception : Can be handle. 2types
+	    Complie time exception(checked): Affect system internal resources. EG: IOException,SocketException
+	    Runtime Exception(Unchecked): EG: NullpointerException,ArithmeticException.
+
+try: place where exception maybe rise
+catch : Error/ Exception handling code present
+finally : At system.exit() the finally block is not executed.
+throw : Manually create exception.
+throws : It is used when if any error occurs then it call one who called me.
+
+in unchecked exception it will compile if we not put any try catch block.
+in checked exception there must be a try catch block.
+
+it handle multiple exception have similar logic then we use | to separate and handle in single catch block
+
+
+Custom Exception(checked exception):-
+-----------------
+
+Min 2 constructor is required=> default constructor,string parameterized constructor.
+Use super method for mapping.
+
+Class extends RuntimeException class then it is unchecked exception.
+Class extends Exception class then it is checked exceptions.
+
+/////Examples in Screenshot
+
+Job of default JVM Exception handler:-
+-> stacktrace is print
+-> print name of exception and reason
+-> Terminate the program.
+
+
+unchecked exception need not to mention in throws it automatically passed.
+
+
+Try must have catch or finally.
+
+Must follow this order => try,catch,finally
+We not have any statement between the try , catch ,finally block.
+
+
+We have multiple catch block then we place the catch blocks in sub class to super class order.
+
+Assignment:-
+
+* pls enter number only at age field
+* Invalid age exception 21 to 60
+* take char of choice.
+* validate the inputs.
+

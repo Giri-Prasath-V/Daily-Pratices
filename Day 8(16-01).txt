@@ -1,0 +1,94 @@
+Factory Design Pattern:-
+-----------------------
+
+create object only specific number of times.
+EG : in the author class we create object only 5 times
+
+Abstract Factory Design Pattern:-
+--------------------------------
+
+Prototype Design Pattern:-
+-------------------------
+
+Copying the object
+use clone() method
+
+Create one object and then duplicate that object using clone()
+
+Builder Design Pattern:-
+-----------------------
+
+According to the inputs given, then depends upon the input object is created.
+
+Property based object creation.
+
+Vehicle v1= Vehicle.setFuel("petrol").setSeats(2).setWheels(4).build();
+
+------------------------------------------------------
+
+Structural Patterns:-
+
+Adapter:-
+--------
+
+When two class need to interact with each other, Adapter act as a middle man to change the value.
+
+EG: AC to DC conversion of voltage. 240 v convert to laptop charging and mobile charging.
+
+Bridge:-
+--------
+Pass the current, communicate with each other.
+
+Composite:-
+---------
+
+
+Decorator:-
+----------
+Other classes add functionalities to original class 
+
+
+Proxy:-
+-------
+
+----------------------------------------------------
+Behavioural:-
+
+Template:-
+----------
+Always invoke in specified manner
+
+Interpreter:-
+------------
+convert from one form to another
+
+
+Iterator:-
+---------
+
+Strategy:-
+---------
+Algorithms
+
+
+----------------------------------
+
+Anti-Patterns:-
+	Swallowing exceptions
+	throw exception
+	Using Constructor
+	
+
+Assignment:-
+-----------
+
+class ceo
+   first created.
+
+
+
+
+
+
+
+

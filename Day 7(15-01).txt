@@ -1,0 +1,182 @@
+Immutable class:-
+---------------
+Cannot change the object
+EG: String class
+
+make the variable in the class and class to final then it become immutable.
+It cannot be duplicate.
+
+final class std implements Serializable
+{
+	final int rollno;
+	final String name;
+	final int std;
+
+	public std(int rn,String n,int s)
+	{
+		rollno=rn;
+		name=n;
+		std=s;
+	}
+
+	//getter methods
+
+	public String toString()
+	{
+		
+		return "Student[roll No :"+rollno+",Name :+name+",STD :"+std;
+	}
+
+	public int hashCode()
+	{
+		return rollno;
+	}
+	public Boolean equal(Object obj)
+	{
+		//SS	
+	}
+}
+
+record Stud(int rollno,String anme,int standard){}
+// this record eliminates the above class code.
+
+public class ImmutableClass
+{
+PUBLIC STATIC VOID MAIN()
+{
+	std s1=new std(11,"aaaa",5);
+	System.out.println(s1)//call the toString() and perform the action mention in toString() method.
+
+	System.out.println(s1.hashCode());
+}
+}
+
+
+toString() method:-
+Method that automatically called when we print using system.out.println.
+
+If i we use S.O.P then it automatically call the toString() method.
+
+
+hashCode():-
+It is used to know the hashcode of the object.
+
+Need of immutable class:-
+------------------------
+
+EG: used in transaction like scenario
+
+
+Sealed class:-
+---------------
+
+The class who permit that class only extend the class
+The class extend the sealed class that class must be final
+Non sealed is opposite to seal.
+The class is non sealed then it works as normal class.
+
+sealed class Manager permits SalesManager,MarktingManager
+{
+	int x=10;
+	public void abc()
+	{
+	System.out.println('HAi");
+	}
+}
+
+class Peun
+{
+}
+final class SalesManager extend Manager
+{
+}
+sealed class MarketingManager extend Manager permits DManager
+{
+}
+
+final class DManager extends MarketingManager
+{
+}
+
+
+------------------------------------
+Variables:-
+----------
+
+Not all variables are defaultly initialized to 0.
+We can declare the variable as var datatype in java version 10
+EG: var a=10;
+
+If we declare a variable using var then we initialize that place itself.
+     EG: var a=10; (correct)
+	var a;
+	a=10;    (wrong)
+
+VAR CAN BE ALSO USED AS VARIABLE NAME.
+var cannot be used as classname.
+var is only used as local variable. not used as instance variable in class.
+
+
+switch case allow string,enum as a choice.
+switch case not allow double,float,boolean as a choice.
+
+Patterns:-
+---------
+
+Architecture Patterns : MVC,MVVM/MVW,Rest,Microservices etc..
+Messaging Pattern : P2P,Pub/Sub etc.
+Database Pattern :ER,DAO etc.
+Integration Patterns : point to point,Hub-n-Spoke,ESB etc.
+Programmatic Patterns : Mutable,Immutable etc.
+Design Patterns :
+	Object Oriented
+	    Java SE
+		Creational : Singleton,Factory,Abstract factory,Prototype,Builder
+		Structural : Adapter,Bridge,Composite,Flyweight, Decorator,Proxy,Facade
+		Behavioural :Observer,COR, Command, Template, Interpreter, Mediator, Memento, State, Visitor,Iterator,Strategy
+
+	    Java EE
+		Presentationa tier
+		Business tier
+		Integration tier
+
+
+Singleton class:- only one object is able to create.
+final class Principal
+{
+	static private final Principal p1=new Principal();
+	private Principal(){}
+	public static Principal getPrincipal()
+	{ return p1;}
+
+}
+
+Early Instantiation : object created before it call
+Lazy Instantiation  : object is created only if it call
+
+Factory:- method that create objects // In SS EG: Principal
+
+
+Assignment:-
+class A
+{
+}
+class B extends A
+{
+}
+public class SingletonAssignment
+{
+	public static void main(String args[])
+	{
+		A a1=A.getObject();
+		B b1=B.getObject();
+
+		// if i try to create more object it throw an exception.
+	}
+}
+
+* should be able to create only 1 object of A class
+* should be able to create only 1 object of B class
+* If tried to create more than 1 object of any these classes, then the exception is raised
+
+

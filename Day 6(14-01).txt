@@ -1,0 +1,60 @@
+Try with Resources:-
+-------------------
+
+try(stmts);
+
+autocloseable class must be kept at try with resources.
+
+Pattern Matching:-
+----------------
+s1="Wissen Technology"
+s2="Tech"
+s1.contains(s2)
+
+Pattern is a class in java. import java.util.regex.*;
+
+Pattern p1=Pattern.compile(s1);
+Matcher m1=p1.matcher(s2);
+
+System.out.println(m1.matches());// both s1 and s2 same then it return true.
+
+Pattern p1=Pattern.compile(s2);
+Matcher m1=p1.matcher(s1);
+
+System.out.println(m1.find());//  return true if s1 contains s2.
+
+-----------------------------------------
+
+String  email="abc@xyz.com"
+Pattern p2=Pattern.compile("[a-zA-Z0-9.]+@[a-zA-Z]+\\.com$");
+Matcher m2=p2.matcher(email);
+System.out.println(m2.matches());
+
+long  phone=9876543210L
+Pattern p3=Pattern.compile("[8-9][0-9]{9}");
+Matcher m3=p3.matcher(phone+""); // convert the long to string
+System.out.println(m3.matches());
+
+[abcd] => either one of this
+[^abcd] => not contain this
+[a-d][p-r] => a to d and p to r EG: ap (one from first and one from second)
+[a-d[p-r]] => either a to d or p to r
+[a-d&&[p-r]] / ([a-d&&[b-f]] ans: c) => intersection it must be present in both
+
+
+Assignment:-
+
+*name should not contain any other special char
+*start with capital letter
+*2 words allowed 
+*Ajay Krishna allow, Ajay krishna not allowed
+*one word is not allowed
+
+better age handling
+
+
+
+
+
+
+
