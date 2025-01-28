@@ -1,0 +1,270 @@
+Multithreading  :-
+----------------
+
+class A extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println("Anita :"+i);
+		}
+	}
+}
+
+class B extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println("Bob :"+i);
+			try
+			{
+				if(i%3 ==0)
+				{ Thread.sleep(3000);}//sleep for 3 sec.
+			}
+			catch(Exception e)
+			{  }
+		}
+	}
+}
+
+class C extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println("Chaitra :"+i);
+		}
+	}
+}
+
+
+public class ThreadDemo
+{
+	public static void main(String args[])
+	{
+		A a1=new A();
+		B b1=new B();
+		C b1=new C();
+
+		a1.start();
+		b1.start();
+		c1.start();
+
+		System.out.println("Main Exit....");
+
+
+	}
+}
+
+
+=> start() method creates the thread.It execute the run method
+=> Yield() method is used to get out from current thread and runs other thread.
+=> stop() used to terminate a thread.
+=> sleep(time) used to sleep the thread.It automatically come back after the time completes.
+=> suspend() method is used to sleep/block the thread then resume() method is used to unblock the thread.
+=>  wait() method is used to sleep/block the thread then notify()/notifyall() methods are used to unblock the thread.
+=>join() method wait until that thread over and then join it
+
+default name for thread is thread-0,thread-1....
+
+wait() vs suspend():-
+--------------------
+wait(),notify()/notifyall() are object class.
+suspend(), resume() are belongs to thread class.
+
+wait(),notify() only used in synchronize block.
+suspend(), resume() used anywhere
+
+
+this keyword is used to see the thread details.
+            ||
+            \/
+[thread name, priority, parent thread name]
+
+a1.setName("Name");  => use to set the thread name.
+
+this.getName() => used to get only the name of the thread
+
+
+class A extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println ( Thread. currentTread().getName() +i);
+			try
+			{
+				if(i%2 ==0)
+				{ Thread.sleep(1000);}
+			}
+			catch(Exception e)
+			{  }
+
+		}
+	}
+}
+
+class B extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println("Bob :"+i);
+			try
+			{
+				if(i%3 ==0)
+				{ Thread.sleep(3000);}//sleep for 3 sec.
+			}
+			catch(Exception e)
+			{  }
+		}
+	}
+}
+
+class C extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println("Chaitra :"+i);
+			try
+			{
+				if(i%5 ==0)
+				{ Thread.sleep(1000);}
+			}
+			catch(Exception e)
+			{  }
+		}
+	}
+}
+
+
+public class ThreadDemo
+{
+	public static void main(String args[])
+	{
+		A a1=new A();
+		B b1=new B();
+		C b1=new C();
+
+		a1.start();
+		b1.start();
+		c1.start();
+
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println("Main "+i);
+			if(i==5)
+			{
+				b1.suspend();
+			}
+			if(i==18)
+			{
+				b1.resume();
+			}
+			Thread.sleep(3000);
+		}
+		a1.join();
+
+	}
+}
+
+
+--------------------------------------------
+
+Synchronization:-
+
+In synchronize 1 thread is finished then only another thread is able to enter.
+
+class A implements Runnable
+{
+	synchronized public void run()
+	{
+		for(int i=1;i<=20;i++)
+		{
+			System.out.println ( Thread. currentTread().getName() +i);
+			try
+			{ Thread.sleep(500); }
+			catch(Exception e)
+			{    }
+
+		}
+	}
+}
+
+public class SynchDemo
+{
+	public static void main(Strings args[])
+	{
+		A a1=new A();
+		Thread t1=new Thread(a1);
+		Thread t2=new Thread(a1);
+		Thread t3=new Thread(a1);
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+
+
+In above we use runnable so start() is not implemented directly.
+It helps to create multiple threads.
+
+isAlive()=> it is used to check whether the thread is alive or not.
+
+-------------------------------------------------
+
+Daemon thread:-
+-------------
+Background thread with least priority
+
+t2.setDaemon(true) // t2 thread becomes daemon thread
+
+once the thread is started than it cannot convert into daemon thread. so the t2.setDaemon(true) statement must be present before t2.start();
+
+Vise versa is also not possible.
+ 
+-------------------------------------------------
+Thread Grouping:-
+---------------
+
+
+ThreadGroup tg=new ThreadGroup("Demo");
+
+A a1=new A();
+B b1=new B();
+C b1=new C();
+
+
+Thread t1=new Thread(tg,a1);
+Thread t2=new Thread(tg,b1);
+Thread t3=new Thread(tg,c1);
+
+if (i==5)
+	tg.suspend();
+if (i==10)
+	tg.resume();
+if (i==15)
+	tg.stop();
+
+
+
+Assignment:-
+
+Bike Racing Game
+-----------------
+* 10 Bikers with names and their start time
+* Countdown 10, 9, 8, ...... GO
+* Every biker when reaching the finish line mark their end time and ranking
+* Display the bikers list in ascending order of their rankings 
+* Display rankings along with start time, end time and time-taken
+
+
+

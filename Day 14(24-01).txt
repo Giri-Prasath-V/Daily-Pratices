@@ -1,0 +1,110 @@
+Serialization:- Converting object to bytestream
+-------------
+* Need to implement serializable
+* If we modify the content in file then while deserializing then file shows exception
+* transient => variable is not taken for serializing
+
+
+class Person implements Serializable
+{
+	String name;
+	transient int age; // age is not serialized and not stored in file
+}
+
+public class Serializing
+{
+	public static void main(String args[])
+	{
+		Person p1=new person();
+		p1.name="AAAA";
+		p1.age=25;
+
+		ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream("person.ser");
+		oos.writeObject(p1);
+		S.out("Successfully serialized ");
+	}
+}
+	
+
+Deserializing:-
+--------------
+public class DeSerializing
+{
+	public static void main(String args[]) throws Exception
+	{
+		Person p1;
+
+		ObjectInputStream ois=new ObjectInputStream(new FileInputStream("person.ser");
+		p1=(Person)ois.readObject();
+		S.out("Age :" + p1.age);
+		S.out("Name :" + p1.name);
+	}
+}
+
+two variable cannot be serialize:-
+---------------------------------
+=> static
+=> transient
+
+
+==================================================
+
+Design Principles:-
+------------------
+
+DRY => Don't Repeat yourself
+KISS => Keep it simple & stupid/simple
+SOLID => 
+
+S -> Single Responsibility Principle
+O -> Open/Closed Principle (Open for extension and close for modification)
+L -> Liskov's Substitution Principle (LSP) (Write in general manner)
+I -> Interface Segregation Principle
+D -> Dependency Inversion Principle ()(implements class) 
+
+Clean-code Practices:-
+---------------------
+* Choose noun words a class names
+* Choose verbs as method names
+* Choose entities on which action is performed or the entities required to perform the action as variable names
+* Variables/method name start with small letters
+* Class/Enums/Interface names starts with capital letters
+* Give clear names
+* Comments (Avoid redundant comments,Misleading, Journal/Documentation)
+* Exception handling (both Resources based and non-resources based)
+* Indentation
+
+Documentation
+/*
+ *
+ *
+ *
+ */
+
+
+
+
+initatization block:-
+-------------------
+* It act like an constructor
+* Common implementation are place in init block
+* we have multiple init block
+* Exception raise in init block is allowed
+* Executed when creating the object before the constructor execute.
+* Return inside the init or static block is not allowed
+
+class Demo
+{
+	{
+		S.out("Hai...from init block");
+	}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+Problem in storing the data in file:-
+------------------------------------
+* In file data is directly accessiable
+* Available in locally
+* Constraints
+* fast have slow access
+* Relationship between the data is not in file
+
+
+Types of database:-
+------------------
+
+Flat File
+Network Database
+Heirarchical Database
+DBMS
+RDBMS
+ORDBMS
+
+SQL
+NOSQL
+
+Structured and Unstructured data:-
+
+JSON is semi structured
+
+If there is a label then it will be structured.
+If there is non label data then we generally call it as un structured data.
+
+
+        SQL          vs       No-SQL
+
+=> Schema based              Schema less
+
+
+SQL:-
+------
+DDL (Data Definition Language)    - CREATE,ALTER,RENAME,DROP,                                				    TRUNCATE 
+DML (Data Manipulation Language)  - INSERT, DELETE, UPDATE
+DCL (Data Control Language)       - GRANT, REVOKE
+TCL (Transaction Control Language)- COMMIT, ROLLBACK, SAVEPOINT
+DQL/DRL (Data Query/Retrieval Language) - SELECT
+
+
+
+* If i rollback to up then the inbetween check point/savepoint are deleted.
+
+
+database name => all small letters
+Table name, column names => all capital letter
+if 2 words then separate by underscore
+
+char fixed size , varchar(20) means if i enter 5 letter then it takes only 5. but in character it takes 20 as fixed
+
+/c database name => used to connect to database in terminal
+
+
+PostGres:-
+----------
+
+Primary Key : 
+Foreign Key : Reference to primary key
+Unique Key  : Allow null value. Have multiple unique key in same table.
+Candidate key : all keys which are eligible to be primary key 
+Alternate Key : super key
+Composite Key : combination of 2 or more columns to make it unique
+Surrogate Key : extra col created as like a serial no.
+ 
+
+if rollback or commit is given then the transaction is ended.
+
+*serial is used to do autoincrementation
+
+create table EMP (EID serial primary key,
+NAME varchar(15) NOT NULL, 
+AGE smallint ,
+SALARY decimal(8,2) default 15000.00,
+DESIGNATION varchar(20) not null
+);
+
+insert into emp(NAME,AGE,SALARY,DESIGNATION) values('Raju',25,30000,'Tester');
+
+insert into emp(NAME,AGE,SALARY,DESIGNATION) 
+values('Manju',24,50000,'Programmer'),
+('Sanju',29,60000,'Manager'),
+('Ram',30,30000,'Tester');
+
+update emp set age=age+1;
+
+update emp set salary=salary + 5000 where eid=2;
+SELECT * from emp;
+
+
+Assignment:-
+----------
+
+database name - empdb
+
+EID(Primary key),NAME,AGE(21 TO 60),GENDER (MALE/FEMALE),SALARY (MAX:100000), DESIGNATON(PROGRAMMER/TESTER/ADMIN/MANAGER), MGR_ID(Pointing to EID),EMAIL_ID (name@company.com)(unique) ,MARRIED (TRUE/FALSE), JOINING_DATE (default :Current date as joining date)
+
+
+
+
+create table EMPLOYEE(
+EID serial primary key,
+NAME varchar(20) not null,
+AGE smallint check(AGE>= 21 and AGE<= 60),
+GENDER varchar(10) check(GENDER in ('MALE','FEMALE')),
+SALARY decimal(8,2),
+DESIGNATION varchar(15) check(DESIGNATION in ('PROGRAMMER','TESTER','ADMIN','MANAGER')),
+MRG_ID smallint references EMPLOYEE(EID),
+EMAIL_ID varchar(100) UNIQUE NOT NULL CHECK (EMAIL_ID ~* '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'),
+MARRIED boolean,
+JOINING_DATE date default current_date
+);
+
+insert into employee (NAME, AGE, GENDER, SALARY, DESIGNATION, MRG_ID, EMAIL_ID, MARRIED)
+values
+('Alice', 35, 'MALE', 80000, 'PROGRAMMER', NULL, 'alice@xyz.com', TRUE),
+('Bob', 28, 'MALE', 60000, 'TESTER', 1, 'bob@xyz.com', FALSE),
+('Charly', 45, 'MALE', 90000, 'MANAGER', NULL, 'charly@xyz.com', TRUE),
+('Dayana', 32, 'FEMALE', 70000, 'ADMIN', 3, 'dayana@xyz.com', FALSE),
+('Manju', 40, 'FEMALE', 80000, 'PROGRAMMER', 1, 'manju@xyz.com', TRUE);
+
+select * from employee;
+
+//error code
+insert into employee (NAME, AGE, GENDER, SALARY, DESIGNATION, MRG_ID, EMAIL_ID, MARRIED)
+values
+('Raju',20,'MALE',20000,'TESTER',3,'raju@xyz.com',FALSE);
+
+
+
+

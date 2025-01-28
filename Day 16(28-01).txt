@@ -1,0 +1,191 @@
+Aggerate function:-
+-----------------
+
+select * from employee order by salary desc;
+
+select designation,avg(salary) from employee group by designation;
+
+select designation,avg(salary) from employee group by designation having designation ='PROGRAMMER' or designation ='ADMIN';
+
+select designation,avg(salary) from employee group by designation having designation not in ('PROGRAMMER','ADMIN');
+
+select * from employee where age between 31 and 35;
+
+//name end with a
+select * from employee where name like '%a';
+
+//display first 2 employee
+select * from employee limit 2;
+
+//skip first 2 and display next 3 records
+select * from employee limit 3 offset 2;
+
+String function:-
+---------------
+
+concat,substr,upper,lower,reverse
+
+select upper(name) from employee;
+
+
+join:-
+----
+
+Inner join/Self join
+Outer Join
+	Left outer join
+	Right outer join
+Full join
+Cross join
+Union
+Equi join
+
+
+create table ROLE (designation varchar(20) primary key,MAX_LIMIT int not null,MIN_SALARY int not null);
+
+insert into role values
+('TESTER',100,20000),
+('PROGRAMMER',200,30000),
+('MANAGER',15,120000),
+('CLERK',50,25000);
+
+select * from role;
+
+select name,employee.designation,salary,min_salary from employee join role on employee.designation = role.designation
+  where salary < min_salary;
+
+
+
+
+
+find out the employee earn more salary than managers:-
+
+insert into employee (NAME, AGE, GENDER, SALARY, DESIGNATION, MRG_ID, EMAIL_ID, MARRIED)
+values
+('Raju', 35, 'MALE', 120000, 'PROGRAMMER', 3, 'raju@xyz.com', TRUE);
+
+select e1.eid,e1.name, e1.salary as Emp_salary, e2.name as Manager_Name ,e2.salary as Manager_salary 
+from employee as e1 join employee as e2 
+on e1.mrg_id=e2.eid where e1.salary > e2.salary;
+
+
+Rollup:-
+-------
+
+rollup is used to sum of all operation.
+
+select coalesce(designation,'Total') as designation, sum(salary) from employee 
+group by rollup(designation)
+order by sum(salary);
+
+// it perform the cumulative sum for salary. Only done in windows os.
+
+select name,salary,sum(salary) over(order by salary) from employee;
+
+	* row_number() is used to display row number like serial no. 
+
+//it will rank the employee based on salary
+
+select name,salary,rank() over(order by salary) from employee;
+
+	*dense_rank() give the more sense. run and see this
+
+//lag will gives the previous employee salary
+
+select name,salary,lag(salary) over() from employee;
+
+	*lead() also having which gives next values. reverse of lag()
+
+Procedures and functions:-
+------------------------
+
+Procedures does not return anything.
+
+if(!exists(id))
+	insert into table_name values (id,'Raj',25);
+else
+	update into table_name set age =27 where eid=id;
+
+creating procedure:-
+
+create or replace procedure abc()
+language plpgsql
+as $$
+begin
+	insert into employee (NAME, AGE, GENDER, SALARY, DESIGNATION, MRG_ID, EMAIL_ID, MARRIED)
+values
+('Riya', 25, 'FEMALE', 100000, 'MANAGER', null, 'riya@xyz.com', FALSE);
+end;
+$$
+
+call abc();
+
+----------
+
+create or replace procedure insert_emp_record(
+e_name varchar(20),
+e_age int,
+e_gender varchar(10),
+e_salary int,
+e_designation varchar(10),
+e_mrg_id int,
+e_email_id varchar(20),
+e_married boolean
+)
+language plpgsql
+as $$
+begin
+	insert into employee (NAME, AGE, GENDER, SALARY, DESIGNATION, MRG_ID, EMAIL_ID, MARRIED)
+values
+(e_name, e_age, e_gender, e_salary, e_designation, e_mrg_id, e_email_id, e_married);
+end;
+$$
+
+call insert_emp_record('Prasath',25,'MALE',100000,'PROGRAMMER',3,'prasath@xyz.com',FALSE);
+
+-------------
+
+create or replace procedure appraisal(
+	id int,
+	amount int
+)
+language plpgsql
+as $$
+begin
+	update employee set salary=salary+amount where eid=id;
+end;
+$$
+
+select * from employee;
+
+call appraisal(1,2000);
+
+--------------
+
+FUNCTION :-
+--------
+
+create or replace function max_salary(desig varchar(20))
+returns table (eid int,name varchar,salary decimal)
+language plpgsql
+as $$
+begin
+	return query
+	select e.eid,e.name,e.salary from employee e where e.designation=desig
+	and e.salary =(select max(e2.salary) from employee e2
+	where e2.designation=desig);
+end;
+$$ 
+
+drop function max_salary;
+
+select * from max_salary('PROGRAMMER');
+
+----------
+
+
+
+
+
+
+

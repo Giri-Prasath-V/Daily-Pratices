@@ -1,0 +1,68 @@
+Yesterday continue Collections:-
+
+Generics:-
+---------
+  Providing the datatype
+	    ||
+	    \/
+HashMap<Integer,String> mobj=new HashMap<>();
+mobj.put(111,"aaaa");
+mobj.put(222,"bbbb");
+mobj.put(555,"cccc");
+mobj.put(444,"dddd");
+
+Set s=mobj.entrySet();
+Iterator mi=s.iterator();
+
+while(mi.hasNext())
+{
+	// System.out.println(mi.next()); It also work
+	
+	Map.Entry me=(Map.Entry) mi.next();
+	System.out.println("Key :"+me.getKey());
+	System.out.println("Value :"+me.getValue());
+}
+
+class A<T> //<T,R> we specify return type also we czn ass while creating object
+{
+	public void //R// add(T a,T b)
+	{ S.out(a+b); }
+}
+
+
+public class CustomGenerics
+{
+	public static void main()
+	{
+		A<String> a1=new A<String>();
+		a1.add("good","Mrng");
+
+		A<Integer> a1=new A<Integer>();
+		a1.add(10,20);
+		
+		A<Double> a1=new A<Double>();
+		a1.add(1.2,3.5);
+	}
+}
+
+
+Algorithm class:-
+-----------------
+
+Collections class is used to perform sort,binarysearch,reverse, swap, shuffle,  and so on.
+
+
+equals() and hashCode() both method is combinationally used to check for duplicate in Hashset
+
+TreeSet not depends on equals() and hashCode() method. Need to implement Comparable and override compareTo() method.
+
+
+
+
+Covariant
+
+Invariant
+
+Contravariant
+
+ 

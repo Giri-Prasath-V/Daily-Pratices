@@ -1,0 +1,345 @@
+java.util.*:-
+-------
+Scanner
+Random
+Date
+Stack
+Calendar
+GregorianCalender
+Bitset
+
+ArrayList
+LinkedList
+Hashset
+HashMap
+TreeMap
+Treeset
+LinkedHashSet
+Priority Queue
+Collections
+
+Enumeration
+Iterator
+Comparator
+
+Scanner:-
+--------
+	*scans the input, it can be from keyboard or from file or any input stream
+
+Date:-
+------
+	*01st Jan 1970 00:00:00 first date
+
+	Date d1=new Date();
+	System.out.println(d1);
+
+	*here the month is start from 0
+	*to get the year add with 1900
+	System.out.println(1900+d1.getYear());
+
+Stack:-
+------
+	
+Stack s1=new Stack();
+s1.push("111");
+s1.push("222");
+s1.push("333");
+s1.push("444");
+
+System.out.println(s1.pop());
+System.out.println(s1.peek());
+
+System.out.println(s1.search("222")); //return the position of element from last. OP:3 (first element as 1 no zero). If not available then return -1
+
+s1.empty() => check stack is empty or not
+
+
+Calender:-
+---------
+	*It is abstract class
+	*GregorianCalender is not abstract calander
+
+Bitset:-
+------
+
+	*Works in bits print in sets
+	
+BitSet b1=new BitSet(16); //multiple of 8 or 16
+BitSet b2=new BitSet(16); //0000 0000 0000 0000
+
+System.out.println(b1);
+
+for(int i=0;i<16;i++)
+{
+	if(i%3==0)
+		b1.set(i);    //1001 0010 0100 1001
+	if(i%4==0)
+		b2.set(i);   // 1000 1000 1000 1000
+}
+
+System.out.println(b1);
+System.out.println(b2);
+
+
+b1.and(b2);  //intersection
+b1.or(b2);   //union
+b1.xor(b2);   // union - intersection
+
+-------------------------------
+Assignment:-
+
+public class Calculator
+{
+	public int add(int a, int b)
+	{
+		return a+b;
+	}
+	public int sub(int a, int b)
+	{
+		return a-b;
+	}
+	public int mul(int a, int b)
+	{
+		return a*b;
+	}
+	public int div(int a, int b)
+	{
+		return a/b;
+	}
+}
+ 
+java Calculation
+Enter operation : sub
+Enter parameter 1 : 20
+Enter parameter 2 : 10
+Result : 10
+
+
+Collection Frameworks:-
+----------------------
+
+	* Class hold more than one object.
+	* Dynamic
+	* Set,List,Queue extends collection (only add one object at a time)
+	* Map
+	
+Set => hold unique elements
+	* HashSet => use hash algo to store element. No duplicate is added.
+	* TreeSet => data in Sorted order (Binary tree algo)
+	* LinkedHashSet => store the element which we enter.
+
+List=> 
+	* Vector => It is synchronized
+	* LinkedList => faster for insert and delete. By default it is double linkedlist
+	* ArrayList =>It is not synchronized. Continuous memory.
+
+
+Queue => 
+	* Deque (ArrayDeque)
+
+Map => key and value pair
+	* Hashtable => Synchronized.
+	* HashMap => not Synchronized. It allows null value
+	* TreeMap => store the element in sorted order
+	* LinkedHashMap => store the element which we enter
+
+Enumeration -> hasMoreElements(),nextElement()
+Iterator -> hasNext(),next(),remove()
+
+Vector:-
+-------
+
+Vector v1=new Vector();
+v1.add("HELLO");
+v1.add(12345);
+v1.add(new Date());
+v1.add(new Thread());
+
+Enumeration e=v1.elements();
+while(e.hasMoreElements())
+{
+	System.out.println(e.nextElement());
+}
+
+HashSet obj=new HashSet();
+obj.add("1111");
+obj.add("2222");
+obj.add("3333");
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+	
+
+TreeSet obj=new TreeSet();
+obj.add("1111");
+obj.add("2222");
+obj.add("4444");
+obj.add("3333");
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+
+LinkedHashSet obj=new LinkedHashSet();
+
+obj.add("1111");
+obj.add("2222");
+obj.add("4444");
+obj.add("3333");
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+
+ArrayList obj=new ArrayList();
+obj.add("1111");
+obj.add("2222");
+obj.add("4444");
+obj.add("3333");
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+
+LinkedList obj=new LinkedList();
+obj.add("1111");
+obj.add("2222");
+obj.add("4444");
+obj.add("3333");
+obj.addFirst("000");  //not available in arraylist
+obj.addLast("999");   //not available in arraylist
+obj.add(3,"5555");    //not available in priority queue
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+
+PriorityQueue obj=new PriorityQueue();
+obj.add("1111");
+obj.add("2222");
+obj.add("4444");
+obj.add("3333");
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+
+
+ArrayDequeue obj=new ArrayDequeue();
+
+obj.add("1111");
+obj.add("2222");
+obj.add("4444");
+obj.add("3333");
+obj.addFirst("000");  
+obj.addLast("999");   
+obj.add(3,"5555");    
+
+Iterator i=obj.iterator();
+
+while(i.hasNext())
+{
+	System.out.println(i.next());
+}
+
+Map:-
+----
+
+Hashtable mobj=new Hashtable();
+mobj.put("111","aaaa");
+mobj.put("222","bbbb");
+mobj.put("333","cccc");
+mobj.put("444","dddd");
+
+Set s=mobj.entrySet();
+Iterator mi=s.iterator();
+
+while(mi.hasNext())
+{
+	// System.out.println(mi.next()); It also work
+	
+	Map.Entry me=(Map.Entry) mi.next();
+	System.out.println("Key :"+me.getKey());
+	System.out.println("Value :"+me.getValue());
+	
+}
+
+HashMap mobj=new HashMap();
+mobj.put("111","aaaa");
+mobj.put(null,"bbbb");
+mobj.put("333",null);
+mobj.put("444","dddd");
+
+Set s=mobj.entrySet();
+Iterator mi=s.iterator();
+
+while(mi.hasNext())
+{
+	// System.out.println(mi.next()); It also work
+	
+	Map.Entry me=(Map.Entry) mi.next();
+	System.out.println("Key :"+me.getKey());
+	System.out.println("Value :"+me.getValue());	
+}
+
+TreeMap mobj=new TreeMap();
+mobj.put("111","aaaa");
+mobj.put("222","bbbb");
+mobj.put("555","cccc");
+mobj.put("444","dddd");
+
+Set s=mobj.entrySet();
+Iterator mi=s.iterator();
+
+while(mi.hasNext())
+{
+	// System.out.println(mi.next()); It also work
+	
+	Map.Entry me=(Map.Entry) mi.next();
+	System.out.println("Key :"+me.getKey());
+	System.out.println("Value :"+me.getValue());
+}
+
+
+LinkedHashMap mobj=new LinkedHashMap();
+mobj.put("111","aaaa");
+mobj.put("222","bbbb");
+mobj.put("555","cccc");
+mobj.put("444","dddd");
+
+Set s=mobj.entrySet();
+Iterator mi=s.iterator();
+
+while(mi.hasNext())
+{
+	// System.out.println(mi.next()); It also work
+	
+	Map.Entry me=(Map.Entry) mi.next();
+	System.out.println("Key :"+me.getKey());
+	System.out.println("Value :"+me.getValue());
+}
+
+
+
+
+
+

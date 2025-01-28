@@ -1,0 +1,162 @@
+java.io:-
+--------
+
+Input Steam:
+Output stream:
+
+Bytes - ASCII format(1 byte per character)
+Character - Unicode (2 bytes per character)
+
+      Bytestream                      characterstream
+      ----------                      ----------------
+
+=> InputStream,  Outputstream            Reader,      Writer
+=>FileInputStream  FileOutputStream      FileReader  FileWriter
+  BufferInputstream  BufferOutputStream BufferReader .....
+  PipeInputstream   .....               ......        ......
+   ....               .....
+
+read write in specfic datatype:-
+DataInput : DataInputStream
+DataOutput : DataOutputStream
+
+read write in any format:-
+
+write to differnt type of destination in bytestream :PrintStream
+write to differnt type of destination in charstream :PrintWriter
+
+
+File:-
+-----
+exists()
+createNewFile()
+delete()
+canWrite()
+isFile()
+isDirectory()
+mkdir()
+list()
+rename()
+length()
+.....
+
+
+Getting input from keyboard:-
+-----------------------------
+try{
+	c isr=new InputStreamReader(System.in);
+	BufferReader br=new BufferReader(isr);
+
+	S.out("Please enter name:");
+	String name=br.readLine();
+	S.out("Enter Age :");
+	int age=Interger.parseInt(br.readLine());
+}
+catch(){}
+
+
+* there is no method to read integer or numeric value in bufferreader class
+
+Reading from File:-
+-----------------
+
+try{
+	InputStreamReader isr=new InputStreamReader(System.in);
+	BufferReader br=new BufferReader(isr);
+
+	S.out("Please enter file name:");
+	String fname=br.readLine();
+	
+	File f=new File(fname);
+	if(f.exists())
+	{
+		BufferReader fr=new BufferReader(new FileReader(f));
+		String line =null;
+		while( (line=fr.readLine()) != null)
+		{
+			S.out(line);// read only single line
+		}
+		fr.close();
+	}
+	else
+	{
+		S.out("Not exists");
+	}
+	br.close();
+}
+catch(){}
+
+* we can use try with resourses also.
+
+RandamAccessFile : perform both read and write in same program
+------------------
+
+try{
+	RandomAccessFile raf =new RandomAccessFile ("abc.txt","rw");
+	
+	raf.seek(5); // jump 5 character
+	S.out(raf.readLine());
+
+	raf.writeBytes("Just for Demo"); // it override in the file content after that pointer points. EG: the readLine executed then it points to nextline then we write it write in that next line.
+
+	// To write at end of the file then move the pointer to end and write. It perform appending
+	
+	raf.seek(raf.length());
+	raf.writeBytes("Just for Demo");
+
+	raf.close();
+
+}
+
+catch() { }
+
+Write in any destination:-
+-------------------------
+try{
+	//print at console
+	PrintWriter pw =new PrintWrite(System.out);
+	pw.println("Hello.."); // it write in buffer. we need to flush the buffer to write in console.
+	pw.flush();
+	pw.close();
+
+	//write in file
+	PrintWriter pw =new PrintWrite(new FileOutputStream("abc.txt",true)); // this make append mode true
+	pw.println("Hello...");
+	pw.flush();
+	pw.close();
+
+}
+catch() { }
+
+
+Assignment:-
+-----------
+* Write all the data to a file
+* Record fields can be separated by ,and stored as csv file
+* Update the record in file
+
+
+
+
+StringTokenizer:-
+---------------
+
+String str="raju|25|30000|Tester";
+
+StringTokenizer st=new StringTokenizer(str,"|");
+int count=st.countTokens();
+
+for(int i=0;i<count;i++)
+{
+	S.out(st.nexttoken());
+}
+
+
+if i have more delimiter then we use
+
+String str="raju_25|30000;Tester";
+StringTokenizer st=new StringTokenizer(str,"|;:_");
+
+
+
+

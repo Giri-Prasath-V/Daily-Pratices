@@ -1,0 +1,97 @@
+Packages:-
+---------
+
+java.util
+java.io
+java.time
+java.lang
+java.sql
+java.net
+java.awt
+java.awt.event
+javax.swing
+javax.jms
+javax.xml
+
+Default : java.lang
+
+java.lang.* classes
+-----------
+String
+StringBuffer
+StringBuilder
+
+object
+class
+
+cloneable
+Runable
+AutoCloseable
+
+System
+Math
+Runtime
+Process
+Record
+
+Thread
+ThreadGroup
+
+Throwable
+Exception
+Error
+RuntimeException
+
+(Wrapper classes)
+Integer
+Double
+Float
+Short
+Byte
+Long
+Boolean
+Character
+
+Enum
+
+subpackages:-
+=>java.lang.reflex
+=>java.lang.annotation
+
+There is a java.lang.reflex which comes under java.lang.
+It contains these classes
+Method
+Field
+Constructor
+
+Wrapper classes:-
+
+Wrapping of primitive type to object.
+
+String vs StringBuffer=> 
+ *string is immutable, stringbuffer is mutable
+ * In string the content is same then new string object is not created. It is refered by the existing one. But in SB  creates new object every time.
+
+StringBuffer vs StringBuilder =>
+ *StringBuffer is synchronization StringBuilder is unsynchronization
+
+Runtime => 
+	*used to run any kind of application
+	*used to see the system process
+	* It has private constructor so we create a object using factory method
+	*It is singleton class
+
+	Runtime rt= Runtime.getRuntime();
+	Process p1=rt.exec("calc.exe");
+	Process p2=rt.exec("notepad.exe");
+	
+	//closing the apps
+	p1.destroy()
+	p2.destroy()
+	
+Object:-
+	*Root class in java
+
+
+
+
