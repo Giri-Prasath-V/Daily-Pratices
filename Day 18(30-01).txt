@@ -1,0 +1,38 @@
+DAO design pattern:-
+-------------------
+
+ResultSet:-
+---------
+
+* It is read only cannot update
+
+
+Types of ResultSet:-
+-------------------
+ 1. READ_ONLY (Default)
+ 2. UPDATEABLE
+ 3. FORWARD_ONLY
+ 4. SCROLLABLE
+
+
+ResultSetMetaData:-
+------------------
+
+
+ResultSetMetaData rsmd=rs.getMetaData();
+
+int columns=rsmd=getColumnCount();
+
+while(rs.next())
+{
+	for(int i=1;i<columns;i++)
+	{
+		System.out.println(rsmd.getColumnName(i)+ " : " + rs.getString(i));
+	}
+}
+
+
+
+EMPLOYEE (EID, NAME, AGE, SALARY, BASIC, HRA, TA, DA, PF, DESIGNATION, DEPARTMENT, HOD)
+
+

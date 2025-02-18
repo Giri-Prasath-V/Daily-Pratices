@@ -1,0 +1,72 @@
+DevOps:-
+-------
+
+improve any stage of the development lifecycle
+
+SCRUM:-
+------
+
+SCRUM Meeting
+SCRUM Master
+Product owner
+Stake holder
+Standup meeting
+
+
+Tools:-
+------
+
+Plan  - JIRA
+Code  - Eclipse,VSC,STS,IntelliJ, GIT, GitHub,
+Built - Ant, Maven, Gradle
+Test  - Junit, Mockito, Selenium, Jest, Jasmine, Karma
+Release - Jenkins, TeamCity, CI/CD 
+Deploy  - Docker, Containerd
+Operate - Kubernetes, Ansible
+Monitor - Grafana, Splunk
+
+
+SCM:-
+----
+	* Source code Management
+	* Able to track the changes
+	* Identify who changed
+	* Helps in collabration
+GIT
+Perforce
+Mercurial
+Rational Clear Case
+
+
+GIT                  vs               GitHub:-
+---                                   -------
+Client side tool                 server side tool
+CLI                              UI based
+
+Git repo:-
+Working | Stating | Local repo
+
+git init => initialize repository
+git status => To see the status of file
+git add filename=> add file to git repo (Working to stating area)
+git commit -m "Created A.java"(message) => Stating to Local Repo
+git rm filename => remove file from git
+git show => show the modified code
+git log => to display logs
+
+git branch branch_name => create a branch
+git checkout branch_name => switch to that branch
+git branch => show current branch
+git merge merging_branch_name => navigate to master branch and merge the branch content to master branch
+git branch -d branch_name => delete branch 
+
+
+git tag v3.1 => add version number to last commit
+git tag v3.0 commit_id => make to that mentioned commit_id
+git tag -d v3.0 => delete tag
+
+
+
+
+
+

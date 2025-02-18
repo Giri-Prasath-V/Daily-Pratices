@@ -1,0 +1,138 @@
+Row Set:-
+-------
+
+            JdbcRowSet rs= RowSetProvider.newFactory().createJdbcRowSet();
+
+            rs.setUrl("jdbc:postgresql://localhost:5432/empdb");
+            rs.setUsername("postgres");
+            rs.setPassword("tiger");
+
+            rs.setCommand("select * from emp");
+            rs.execute();
+
+            while(rs.next())
+            {
+                System.out.println("Name :"+rs.getString("name"));
+                System.out.println("Age :"+rs.getInt("age"));
+                System.out.println();
+            }
+
+
+
+Types of Rowset:-
+----------------
+
+CachedRowSet
+JdbcRowSet
+FilteredRowSet
+JoinRowSet
+
+WebRowSet => for web
+
+
+
+RowSetListener:-
+--------------
+
+rs.addRowSetListener(new EmpListener());
+
+class EmpListener implements RowSetListener
+{
+
+	public void cursorMoved(RowSetEvent evt)
+	{
+		System.out.println("-------------");
+	}
+	
+	public void rowChanged(RowSetEvent evt)
+	{
+		
+	}
+
+	public void rowSetChanged(RowSetEvent evt)
+	{
+		
+	}
+
+
+}
+
+
+-----------------------------------------------------
+
+NoSQL:-
+--------
+
+
+
+SQL                vs.               No-SQL
+-----                                ------
+
+Schema based                         Schema less
+Ordered                              Unordered
+Tables                               Collections
+Rows/Records                         Documents
+Fields,Columns                       Key:Value pair
+
+
+Mongo DB:-
+----------
+
+mongod (server-side)
+mongosh(client-side) CLI
+mongo-compass (client-side) GUI
+mongo-atlas (cloud based)
+
+comments
+---------
+create database:  use dbname
+list database  :  show dbs
+switch from one db to another : use dbname
+see the current database name : db
+create collections : 
+see collections  : show collecctions
+drop collection : db.Employee.drop()
+drop database : db.dropDatabase()
+insert : db.collection_name.insert({'name':'Raju','age':23})
+
+insertOne(),insertMany()
+updateOne(),updateMany()
+
+see the data : db.collection_name.find()
+
+
+db.Employee.find({'designation':'Tester'})
+
+db.Employee.find({'age': {$lt: 31}})
+
+db.Employee.find( {$or :[{'age': {$lte: 30}},{'designation':'Tester'}]})
+
+db.Employee.updateOne({'name':'Hari'},{$s
+$set :{'salary':90000}})
+
+db.Employee.find({},{'_id':0,'name':1})
+
+db.Employee.find({},{'_id':0,'name':1}).limit(2)
+
+db.Employee.find({},{'_id':0,'name':1}).skip(2)
+
+//ascending order
+db.Employee.find({},{'_id':0,'name':1,'age':1}).sort({'age':1}) 
+
+//desending order
+db.Employee.find({},{'_id':0,'name':1,'age':1}).sort({'age':-1})
+
+db.Employee.find({},{'_id':0,'name':1,'age':1,'designation':1}).sort({'designation':1},{'age':-1})
+
+
+db.Employee.deleteOne({'name':'raju'});
+
+
+
+
+
+
+
+
+
+

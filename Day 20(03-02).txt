@@ -1,0 +1,36 @@
+spring tool suite
+
+Advance Java Features:-
+-----------------------
+
+Record
+Enum
+for-each loop
+try-with-resources
+sealed class
+interface with multiple methods with body
+Functional interface
+Lambda Expression
+Method references
+forEach() method
+Predicate
+Date & Time API
+Optional API
+Stream API
+
+
+Interface:-
+------------
+default keyword is used to declare the contents in the body in interface in java 8
+static methods we directly call
+
+
+
+
+
+
+
+
+
+
+

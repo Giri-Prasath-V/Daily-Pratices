@@ -1,0 +1,58 @@
+Basically Dark patterns are the intentionally deceptive design practices used to manipulate the user's behaviour, like... often leading to unintended or unwanted outcomes. These patterns can include misleading prompts, hidden cost, infinite loop scrolling and so on.
+
+
+Testing:-
+--------
+
+Unit Testing - JUnit
+Integration testing - Mockito
+Functional testing
+Non-Functional testing
+Acceptance testing
+Load testing   - JMeter
+Performance testing - JMeter
+Feasibility testing
+Validation testing
+Compatibility testing
+
+
+Black box testing
+white box testing
+Sand box testing
+Grey box testing
+
+Manual testing
+Automation testing
+
+Alpha testing
+Beta testing
+
+JUnit:-
+-------
+
+Version:-
+JUnit 3
+JUnit 4
+JUnit 5 - Jupiter
+* Lambda expression
+* Multiple new patterns
+* Microservices
+* Many new features
+
+
+Assignment:-
+----------
+
+* How to test a method which has return type void
+* How to test an interface without having an access to its implementation
+* How to test for the method been called exactly for 3 times
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+JDBC(Java database connectivity):- SunMicrosystem
+---------------------------------
+
+1. Load/Register the driver
+	a. JDBC-ODBC bridge
+	b. Part-Java Part-Native
+	c. Pure Native
+	d. Pure Java
+	Class.forName("driver-class");
+2. Connect to database
+	Connection con=DriverManager.getConnection(url,uname,pwd);
+3. Create a statement object
+	Statement stmt=con.createStatement();
+4. Execute Quries
+
+   APPLICATION		-> 	DATABASE
+	stmt.executeUpdate("insert/update/delete etc.");
+
+   DATABASE		<-	APPLICATION
+        ResultSet rs = stmt.executeQuery("select * from ....");
+
+
+
+
+ * if i don't know the columnname then use column name
+ * if i dont know the column type then use getString()
+
+
+code:-
+-----
+
+
+import java.sql.*;
+
+public class JdbcDemo
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            Class.forName("org.postgresql.Driver");
+            Connection con =DriverManager.getConnection("jdbc:postgresql://localhost:5432/empdb","postgres","tiger");
+            Statement stmt=con.createStatement();
+           // stmt.executeUpdate("insert into emp values('Maju',26)");
+           // stmt.executeUpdate("update emp set age=age+1");
+           //stmt.executeUpdate("delete from emp where age>30");
+
+            ResultSet rs=stmt.executeQuery("select * from emp");
+
+            while(rs.next())
+            {
+                System.out.println("Name :"+rs.getString("name"));
+                System.out.println("Age :"+rs.getInt("age"));
+                System.out.println();
+
+                /*System.out.println("Name :"+rs.getString("1"));
+                System.out.println("Age :"+rs.getInt("2"));
+                System.out.println(); */
+            }
+
+
+
+            
+
+            stmt.close();
+            con.close();
+
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}
+
+
+
+Types of statements:-
+---------------------
+
+1. Simple Statement
+2. PreparedStatement
+3. CallableStatement
+4. Batch Statement
+
+
+
+//executeupdate() return int value
+//execute() return Boolean value
+
+
+
+
+
+Assignment:-
+-----------
+
+
+
+
+
+
+-----------------------
+
+   1. Create
+
+   2. Display
+
+   3. Appraisal
+
+   4. Search
+
+   5. Remove
+
+   6. Exit
+
+-----------------------
+
+Enter choice :- 1
+ 
+(This is for Option 1)
+
+-----------------------
+
+   1. Clerk
+
+   2. Programmer
+
+   3. Manager
+
+   4. Others
+
+   5. Exit
+
+-----------------------
+
+Enter choice :- 1
+ 
+(This is for Option 2)
+
+-----------------------
+
+   1. By ID
+
+   2. Name
+
+   3. Designation
+
+   4. Age
+
+   5. Salary
+
+   6. Exit
+
+-----------------------
+
+Enter choice :- 1
+ 
+ 
+EMPLOYEE (EID, NAME, AGE, SALARY, DESIGNATION,DEPARTMENT)
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

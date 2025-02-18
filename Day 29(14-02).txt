@@ -1,0 +1,59 @@
+Docker:-
+-------
+
+Containerize whole things (os, server environment...)
+
+Containerization           vs        Virtualization
+----------------                     ----------------
+Contains                             Virtual Machines
+
+
+
+docker info => to see the info of client and server
+docker images => to see images
+docker ps => show the container that are running
+docker ps -a => show all the containers
+docker rm containerid => to remove container
+docker rmi name => remove images
+docker stop containerid => stop the running container
+docker kill => forcefully stop
+
+docker pull redis
+docker create <imge_name>
+docker start <C_id>
+docker exec -i -t <cid> sh
+docker stop<cid>
+docker rm <cid>
+docker img <img_name>
+
+docker run redis => done all
+
+create custom image:-
+	* Dockerfile
+	  -> Base Os
+	  -> Softwares
+	  -> Entrypoint/Command
+
+docker build .
+docker push accname/BRANCH (docker push pankajanadure/mycustomredis)
+
+
+docker build . -t <docker-user-id>/mycustomjava
+ 
+
+--------------
+
+create project file
+create Dockerfile
+docker build -t mycustomjava .
+
+docker login
+docker tag mycustomjava giriprasath1921/mycustomjava:latest 
+docker push giriprasath1921/mycustomjava
+docker run giriprasath1921/mycustomjava
+ 
+
+
+
+
+

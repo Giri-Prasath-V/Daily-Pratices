@@ -1,0 +1,51 @@
+Spring:-
+-------
+
+Predefined Implementation of design patterns
+Springboot is a part of spring framework
+
+Spring Framework:-
+-----------------
+	Spring Core
+	Spring Web MVC
+	Spring REST
+	Spring Data JPA
+	Spring Test
+	Spring AOP
+
+Spring Core:-
+------------
+
+Difference between DI and IOC: 
+ Dependency Injection DI : object is depend on other then that object is created and injected. It is one of the pattern.
+ Inversion of Control IOC : It is a principle. I tell some one to create or do the job.
+
+DI Types:-
+	* Constructor Injection
+	* Setter Injection
+	* Field Injection
+IOC types:-
+	* BeanFactory
+	* ApplicationContext
+
+Spring Boot:-
+------------
+It is a modern way of creating spring
+
+Features : 
+	* Autoconfiguration : Perform multiple annotation by using a single annotation 
+	* Spring Initializr/Starter Kit : Only need to mention the springboot version. No need to give its sub packages version.
+	* Embedded Server
+	* Inbuilt H2 DB
+	* Actuators
+
+
+* By default the scope of program is singleton and it is early instantiated.
+* Need to mention it as prototype.
+* In prototype by default it is lazy instantiation
+
+@Lazy => no object created early. When we call only it create a singleton objects
+
+
+
+

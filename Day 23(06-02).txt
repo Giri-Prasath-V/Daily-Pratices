@@ -1,0 +1,186 @@
+Stream API:-
+-----------
+
+Sequential stream
+Parallel Stream
+
+
+3 phases:-
+---------
+
+Initialization : Collection -> Stream  stream(),parallelStream()
+Processing     : Stream  ->  Stream  filter(),map()
+Termination    : Stream  ->  Collections  collect(),reduce()
+
+import java.util.stream.*;
+import java.util.function.*;
+
+List<Integer> list = new ArrayList<Integer>();
+list.add(11);
+list.add(22);
+list.add(33);
+list.add(44);
+
+Predicate<Integer> p1=(x)->x%2==0;
+
+Stream<Integer> s=list.stream();
+Stream<Integer> en=s.filter(p1);
+
+List<Integer> elist=en.collect(Collectors.toList());
+S.Out(elist);
+
+List<Integer> olist=list.stream().filter(p1.negate()). collect(Collectors.toList());
+S.Out(olist);
+
+
+List<Integer> dlist=list.stream().map((x)->x+x). collect(Collectors.toList());
+S.Out(dlist);
+
+List<Integer> slist=list.stream().sort().limit(5).skip(). collect(Collectors.toList());
+S.Out(slist);
+
+
+Random rand=new Random();
+random.ints().filter(x->x>0).limit(5).forEach(System::out);
+
+OptionalInt result=IntStream.range(1,6).reduce((a,b)->a+b);
+S.Out(result.getAsInt());
+
+int res2=Arrays.asList(1,2,3).parallelStream().reduce(10,(a,b)->a+b,(a,b)->a*b);
+S.Out(res2);
+
+IntSummaryStatistics stats=IntStream.rangeClosed(1,10).summaryStatistics();
+
+S.out(stats);
+
+OP: {count: 10,sum:55,min:1,avg:5.50000,Max:10}
+
+S.out("MIN :"+stats.getMin());
+S.out("MAX :"+stats.getMax());
+S.out("COUNT :"+stats.getCount());
+S.out("Average :"+stats.getAverage());
+S.out("Sum :"+stats.getSum());
+
+-----------------------------------------
+
+using map:-
+
+Map<Integer,String> map=new HashMap<Integer,String>();
+
+map.put(11,"AAAA");
+map.put(22,"BBBB");
+map.put(33,"CCCC");
+
+map.entrySet().stream().map(Map.Entry::getKey).forEach(System.out::println) ;   // get the key
+
+getValue -> to get values
+
+map.entrySet().stream().filter(me->me.getKey() > 30).forEach(System.out::println);
+
+---------
+
+List<Integer> l1=Arrays.asList(1,2,3);
+List<Integer> l2=Arrays.asList(4,5,6);
+List<Integer> l3=Arrays.asList(7,8,9,10);
+
+List<List<Integer>> list= Arrays.asList(l1,l2,l3);
+
+list.stream().flatMap(lst->list.stream()).map(x->x+x).collect(Collectors.toList());
+
+* map is used to perform operation in each element
+* flatmap is used to flatten the list of lists.
+
+------------------------------------------------
+
+
+class Emp
+{
+	String name;
+	int age;
+	int salary;
+	String desig;
+	
+	Emp(.....)
+	{ ..... }
+
+	public String toString()
+	{
+		return "("+name+", "+age+", "....)";
+}
+
+List<Emp> list = new ArrayList<Emp>();
+
+list.add(new Emp("AAAA",25,30000,"Tester"));
+list.add(new Emp("BBBB",26,50000,"Programmer"));
+list.add(new Emp("CCCC",35,80000,"Manager"));
+list.add(new Emp("DDDD",25,30000,"Tester"));
+
+//partition the age of emp less than 30 and greater than 30
+Map<Boolean,List<Emp>> m1 = list.stream().collect(Collectors.partitioningBy(e->e.age > 30));
+
+S.OUT(m1.get(true));
+S.out(m1.get(false));
+
+//Display only count for above problem
+Map<Boolean,Long> m2 = list.stream().collect(Collectors.partitioningBy(e->e.age > 30),Collectors.counting()));
+S.out(m2);
+
+//Group the employee by their designation
+Map<String,List<Emp>> m3 = list.stream().collect(Collectors.groupingBy(e->e.desig));
+S.out(m3);
+
+//give the count
+Map<String,Long> m4 = list.stream().collect(Collectors.groupingBy(e->e.desig),Collectors.counting());
+S.out(m4);
+
+//Display only name
+Map<String,List<String>> m5 = list.stream().collect(Collectors.groupingBy(e->e.desig,Collectors.mapping(e->e.name,Collectors.toList())));
+S.out(m5);
+
+
+	* filter - only 1 condition
+	* partitioningBy - only 2 condition
+	* groupingBy - More than 2 condition
+
+
+
+
+class Student
+-------
+rollNo
+name
+age
+standard
+school
+gender
+percentage
+
+class Fees
+-----
+totalFees
+feesPaid
+feesPending
+
+
+* How many students in each standard
+* How many students male & female
+* How many students failed and pass (count) (40% pass)
+	-Whole university
+	-School wise
+* Top 3 students in terms of percentage
+* Top Scorer school wise
+* Average age of male & female students
+* Total fees collection happened school wise
+* Total fees pending school wise
+* Total no.of students in university
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+Lambda Expression:-
+-------------------
+
+
+assertEquals(excepted,actual,"message")
+
+int x=10
+int y=20
+int z=30
+
+assertEquals(z,c1.add(x,y),"The sum of "+x+" and "+y+" is not resulting into "+z);
+
+//lambda exp
+
+assertEquals(z,c1.add(x,y),()->"The sum of "+x+" and "+y+" is not resulting into "+z);
+
+Method references:-
+-----------------
+
+ForEach method:-
+----------------
+
+Predicate:-
+----------
+
+Assignment:-
+-----------
+
+Order Table: pid,product_name,quantity, date
+
+Year   Quantity    
+
+2020    
+2021
+2022
+2023
+2024  
+
+Pivot  
+Unpivot
+
+crosstab
+
+
+
+
+
+
+
+
+
+
+
+

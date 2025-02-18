@@ -1,0 +1,124 @@
+Date & Time API:-
+---------------
+
+Problem in util date class:-
+
+ 	* Give both time and date
+	* Month start with 0 to 11. It make confusion.
+	* It does not give live time zone
+	* Not thread safe
+
+java.time.*;
+
+//DATE
+LocalDate ld = LocalDate.now();
+S.Out(ld)
+
+//TIME
+LocalTime lt = LocalTime.now();
+S.Out(lt)
+
+//Both time and date
+LocalDateTime ldt=LocalDateTime.now();
+S.out(ldt)
+
+//update month to 5th month(MAY). Valid values is 1 to 12
+S.out(ld.withMonth(5));
+
+LocalDate d2 = LocalDate.of(1983,Month.MARCH,17);
+S.Out(d2);
+
+//time of another zone
+LocalTime t1=LocalTime.now(ZoneId.of("Singapore"));
+S.Out(t1);
+
+//To get all zone
+Set s=ZoneId.getAvailableZoneIds();
+s.forEach(System.out::println);
+
+
+----------------------------------------------
+
+Optional API:-
+-------------
+
+	* Handling null pointer Exception
+	* 
+
+import java.util.*;
+
+Integer i1=10;
+Integer i2=null;
+
+Optional<Integer> o1=Optional.ofNullable(i1);
+Optional<Integer> o2=Optional.ofNullable(i2);
+
+add(o1,o2);
+
+public void add(Optional<Integer> a, Optional<Integer> b)
+{
+	Integer i1=a.orElse(0);
+	Integer i2=b.orElse(0);
+	S.Out(i1+i2);
+}
+
+-------------------------------------
+
+Nashorn:-
+--------
+
+	* It will run the javascript code in java
+
+import javax.script.*;
+try
+{
+	ScriptEngineManager mgr=new ScriptEngineManager();
+	//ScriptEngine engine=mgr.getEngineByName("JavaScript");
+	//engine.eval("print('Hai')");
+
+	ScriptEngine engine=mgr.getEngineByName("nashorn");
+	engine.eval(new FileReader("demo.js"));
+	Invocable inv=(Invocable) engine;
+	inv.invokeFunction("abc");
+	inv.invokeFunction("add",10,20);
+	String name = (String)inv.invokeFunction("greet","Wissen","Tech");
+	System.out.println(name);
+
+	List<ScriptEngineFactory> list=mgr.getEngineFactories();
+	list.forEach((sef)->S.OUT(sef.getEngineName()));
+
+}
+catch()
+{}
+
+--------------------------------------------
+
+
+Java code in javascript:-
+
+var dt=Java.type("java.util.Date");
+print(new dt())
+
+var th=Java.type("java.lang.Thread");
+print(new th())
+
+
+
+------------------------------------------
+
+Data Modelling Patterns:-
+------------------------
+
+Normalization
+Entity-Attribute value representation
+Different ways of representing History
+Representing Hierarchical data - 2 ways
+Semi structured data using JSON
+
+
+
+
+
+
+
+

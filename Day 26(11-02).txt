@@ -1,0 +1,64 @@
+PMT (Project Management Tool) :-
+------------------------------
+POM(Project object Management/Model)
+
+* It should be able to validate project structure
+* Dependency management
+* Complie
+* Test and generate reports
+* Generate .jar files
+* Reusable entities
+
+
+Ant
+Maven (pom.xml,XML). Step-by-step
+Gradle (build.gradle, groovy). dynamic
+
+Maven Artifacts/Properties/Attributes:-
+--------------------------------------
+Archetype (maven-archetype-quickstart)
+Artifact ID
+Group ID
+Packages
+
+creating maven project:-
+----------------------
+mvn archetype:generate
+group id :
+Artifact id : project name
+
+Maven Goals/Phases/Life cycle:-
+------------------------------
+validate => mvn validate
+compile  => mvn compile
+Test     => mvn test
+package  => mvn package(create jar file)
+install  => mvn install(install in local repo .m2)
+
+mvn clean => to clean/delete the target folder
+mvn site => to generate a documentation of your project
+
+Scopes in maven:-
+-----------------
+* Default scope is compile scope
+* test scope
+* runtime scope
+* provided scope => interface jar means then we need to use this
+* system scope => jar file not in .m2 then map the path to that location using systemPath tag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

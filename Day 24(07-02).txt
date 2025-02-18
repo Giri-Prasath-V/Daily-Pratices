@@ -1,0 +1,140 @@
+Concurrency:-
+-----------
+import java.util.concurrent.*;
+class Shared
+{
+	static int count=0;
+}
+class IncThread extends Thread
+{
+
+IncThread(String name,Semaphore sem)
+{
+	this.name=name;
+	this.sem=sem;
+	new Thread(this).start();
+}
+public void run() 
+{
+	try
+	{
+	S.out(name+"waiting...");
+	sem.acquire();
+	S.out(name+"got permission...");
+        for (int i = 1; i <= 5; i++) 
+	{
+            System.out.println(name + " : " + ++Shared.count);
+            Thread.sleep(1000);
+        }
+	S.out(name+"has released...");
+	sem.release();
+	}
+	catch()
+	{  }
+}
+}
+
+
+public s. v .main()
+{
+	Semaphore sem = new Semaphore(2); //2 means only 2 thread allow to enter
+	new IncThread("Rajash",sem);
+	new IncThread("Ram",sem);
+	new IncThread("Suresh",sem);
+	new IncThread("AAAA",sem);
+	new IncThread("BBBB",sem);
+	
+}
+
+
+Phaser API:-
+-----------
+
+Thread Pools
+--------------
+Single Thread Pool
+Fixed Thread Pool
+Dynamic/Catched Thread Pool
+Schedule Thread Pool(Fixed Interval,Fixed Delay)
+Custom Thread Pool
+
+Create a Thread pool:-
+ 	* Executors  - Create/Choose the thread pool
+	* Executor - Submit the Runnable task
+	* ExecutorService - Submit task to thread pool
+
+
+Callable thread return a value
+
+
+import java.util.concurrent.*;
+
+class Greet implements Runnable
+{
+	public void run()
+	{
+		for(int i=1;i<5;i++)
+		{ S.OUT("From Greet : "+i);}
+	}
+}
+
+class Sum implements Callable<Integer>
+{
+	int val;
+	Sum(int val)
+	{ this.val=val;}
+
+	public Integer run()
+	{
+		int res=0;
+		for(int i=0;i<=val;i++)
+		{ res=res+i);}
+		return res;
+	}
+}
+
+
+main class() throws Exception
+{
+	ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+	Future<Integer> f1=es.submit(new Greet());
+	Future<Integer> f1=es.submit(new Sum(5));
+	Future<Integer> f2=es.submit(new Sum(20));
+	Future<Integer> f3=es.submit(new Sum(100));
+
+	S.Out(f1 + f2 +f3);
+
+	es.shutdown();
+
+}
+
+
+CompletableFuture for asynchronize communication
+
+
+CompletableFuture<String> cf1= CompletableFuture.supplyAsync(()->{
+	for(int i=1;i<10;i++)
+	{ S.out("Using supplyAsync :"+i);}
+	return "complete the execution ";
+
+	});
+	Thread.sleep(1000);
+	S.OUT("Main Exit..");
+	S.OUT(cf1.get());
+
+//runAsync doesnot return anything but supplyAsync will return
+
+CompletableFuture.runAsync(()->{
+	for(int i=1;i<10;i++)
+	{ S.out("Using runAsync :"+i);}
+
+	});
+
+
+
+
+Fork & Join Framework:-
+---------------------
+
+Big task is divided into small small tasks and these small task execute in parallel and result of parallel task are combine and produce result.
+
