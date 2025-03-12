@@ -1,0 +1,70 @@
+Angular:-
+--------
+
+Angular              vs.          React JS
+--------                         ---------
+
+* Framework                     Library
+* Complete packages             Minimal modules
+* Google                        Facebook
+* Real DOM                      Virtual DOM  
+
+
+
+Angular JS           vs.        Angular
+-----------                    ---------
+
+* Library                      Framework
+* v1.x                         v2+
+* JavaScript                   TypeScript 
+* Controller oriented          Component oriented
+
+
+  
+create angular app : ng new name
+
+to create with module : ng new name --standalone
+
+run : ng serve
+
+create a component : ng g c parent
+
+create component in parent folder : ng g c parent/child
+
+
+In angular component having 4 things:-
+
+-> HTML
+-> CSS
+-> TS
+-> spec.ts
+
+View Encapsulation:-
+
+Component => user defined tag
+
+Data Binding:-
+-------------
+
+One way binding:
+	HTML   ->   TS
+		Event Binding ( )
+
+	TS     ->   HTML
+		Interpolation {{ }}
+		Property Binding [ ]
+
+Two way binding:
+	HTML   <->  TS
+		ng-model  [( )]
+
+
+
+
+
+
+
+
+
+
+

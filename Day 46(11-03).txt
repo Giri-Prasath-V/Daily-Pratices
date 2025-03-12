@@ -1,0 +1,9 @@
+Testing:-
+-------
+
+run a test case : ng test
+
+ng build => to done finally after complete the project
+
+Java Integration:-
+-----------------

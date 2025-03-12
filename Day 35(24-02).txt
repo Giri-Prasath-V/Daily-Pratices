@@ -1,0 +1,28 @@
+Microservices:-
+-------------
+
+
+Moolithic                    vs         Microservices
+--------------                        ---------------
+
+Single server                          Multiple server
+Single DB                              Multiple DB
+All modules in single sever running    Isolated with its 
+                                       own server & db
+
+Microservices
+--------------
+* Creating services
+* Register the services in Eureka Server
+* Discover the services from Eureka Server
+* Load Balancing
+* Failover
+* API Gateway
+
+
+
+
+
+
+
+

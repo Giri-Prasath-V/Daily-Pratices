@@ -1,0 +1,141 @@
+JavaScript:-
+-----------
+
+JavaScript       vs              Java
+-----------                     ------
+
+Scripting Lang.               Programming Lang.
+Interpreted                   Complied & Interpreted
+Dynamically/Loosely typed     Statically/Strictly typed
+Object based                  Object oriented
+constructor()                constructor name is class name
+
+JS types:-
+---------
+Internal JavaScript : Use <script> tag in html
+External JavaScript : Use <script src="jsfile.js">
+
+JS Editions:-
+-----------
+ES5 - JavaScript
+ES6 - ECMA Script (ES5 + OOPs)
+ES7 - Type Script (ES5 + ES6 + Data types)
+
+
+JavaScript types
+----------------
+
+Core JavaScript        - Variables, Constants, datatypes, Operators, Control Statements, Inbuilt functions, Custom Function, Functional Programming, Inbuilt Object, Custom Objects, Timer APIs, Rest & Spread etc.
+Client side JavaScript - Browser based (BOM, DOM, Event Handling..) (Angular,React,Vue JS...)
+Server side JavaScript - File handling, DB operations, Middleware etc.. (Node js, Express etc..)
+
+
+Datatypes:-
+---------
+
+number
+string
+object
+Boolean
+undefined
+function
+
+*In JS null is a type of object
+*In JS there is no character datatype it is consider as string
+
+Operators
+----------
+Arithmetic  :+, -, *, /, %
+Conditional : ?:
+Bitwise     : &, |, ^
+Logical     : &&, ||, !
+Relational  : <, >,<=, >=,!=
+Assignment  : =, +=,-=,*=,/=,%=
+Shift       : >>, <<
+Incr/decr   : ++, --
+Equality    : ==, ===
+Spread/Rest : ...
+Arrow       : =>
+Optional Chaining : ?.
+
+
+Control Statements:-
+------------------
+
+Conditional   : if, if-else, if-else-if, nested-if, switch
+Looping       : for, while, do-while, for-in, for-of
+Branching     : continue, break, return
+
+var arr=[11,22,33,44,55]
+
+//for-in loop - It print the index value
+for(let x in arr)
+{
+	console.log(x) // it print index value
+	console.log(arr[x]) //print value
+}
+
+//for-of loop - It print directly value
+for(let x of arr)
+{
+	console.log(x) //It print value
+}
+
+Inbuilt Functions:-
+-----------------
+
+typeof()
+isNaN()
+eval()
+parseInt()
+parseFloat()
+setTimeout()
+setInterval()
+clearTimeout()
+clearInterval()
+
+Custom Function:
+----------------
+Using 'function' keyword
+Anonymous function
+Arrow functions
+Using "new Function()"
+
+Functional Programming:-
+-----------------------
+First class member
+HOF (Higher Order Functions)
+
+Inbuilt Object:-
+---------------
+console
+Math
+String
+Date
+Boolean
+Number
+null
+
+Custom Object:-
+--------------
+Object as Constructor
+function as constructor
+JSON Format
+ES6 classes
+
+Rest and Spread API:-
+--------------------
+
+* Method overloading not allowed
+
+
+
+
+
+
+
+
+
+
+
+

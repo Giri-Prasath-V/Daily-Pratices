@@ -1,0 +1,24 @@
+Services & DI:-
+--------------
+Inject
+
+
+to create services: ng g s name
+
+own directive creation:-
+-----------------------
+
+create directive : ng g d name
+
+ElementRef => refer element
+
+@HostListener => to make custom event based directive
+
+
+Forms:-
+------
+Template Driven Form
+Reactive Form
+
+
+

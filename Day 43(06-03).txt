@@ -1,0 +1,68 @@
+Create custom tag : IN my-second-app
+
+Life cycle methods:-
+-------------------
+
+OnInit,OnChanges,OnDestroy,DoCheck
+
+Pipes:-
+------
+
+Inbuilt pipes:
+	uppercase, lowercase, slice, currency, date, ...
+Pipes chaining:-
+	Combine one or more pipes in single example
+
+custom pipe:
+
+command : ng g p pipes/pipename
+
+pure pipes => pure = false => at run time changing the value of pipe. It use more resources.
+Impure pipes =>
+
+
+Directives:-
+-----------
+Structural Directives:
+	ngIf, ngElse, ngFor, ngSwitch
+		
+
+Attribute Directives:
+	<div class=""> ngClass
+	<div style=""> ngStyle
+
+
+Assignment:-
+-----------
+
+1)
+<circle radius ='10'>
+
+Radius : 10
+Diameter : 20
+Perimeter :
+Area :
+
+2)Currency converter
+
+amount in INR
+
+200000 | money => ₹200000
+200000 | money : 'USD'  => it show the amount equilent in USD 
+200000 | money : 'JPY'
+
+USD,JPY,SAR,EUR,AUD
+
+3.
+radio button => LOAN/Deposit/Mutual FUND
+   
+mutual fund
+   Monthly SIP    =>
+   Duration       =>
+   ROI            => -25 % < roi  <25%
+
+    display result
+
+
+
+

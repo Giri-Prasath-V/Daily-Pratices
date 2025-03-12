@@ -1,0 +1,43 @@
+Client side JavaScript:-
+
+Browser Object Model:-
+----------------------
+
+* Root object is window
+
+window
+	location
+	history
+	navigator
+	screen
+	document
+
+alert()
+confirm()
+prompt()
+close()
+open()
+
+Document Object Model:-
+-----------------------
+
+DOM Parser
+DOM APIs
+
+document
+frames
+forms
+anchors
+buttons
+
+
+
+
+
+
+
+
+
+
+
+

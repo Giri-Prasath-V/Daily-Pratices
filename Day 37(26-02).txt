@@ -1,0 +1,79 @@
+UI/Frontend:-
+-----------
+
+HTML       - What to display
+CSS        - How to display
+JavaScript - Dynamicity & Validation
+
+
+HTML:
+----
+
+
+rowspan -> merge row
+colspan -> merge col
+
+input types : text, password, checkbox, number, email, date, radio, file, pattern, range, url, submit, reset, button
+
+attributes: placeholder, required, min, max, minlength, maxlength
+
+semantic tags:-
+
+<header> <footer> <section> <article>
+
+
+CSS types
+---------
+
+Inline
+Internal/Embedded
+External
+
+CSS Selector types
+--------------------
+
+ID selector          : #
+Class selector       : .
+Tag/Element selector : tag name
+Attribute selector   : []
+wild card selector   : *
+Child selector       : >
+
+
+Pseudo-type selectors
+---------------------
+
+Pseudo-classes(:)
+Pseudo-elements(::)
+a:hover
+a:active
+a:visited
+a:link
+
+p:first-child
+
+p::first-letter
+
+
+CSS model types:-
+----------------
+
+Box model
+Flex model
+Grid model
+
+Media Queries
+-------------
+
+@media
+screen
+max-width
+min-width
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+default params:-
+---------------
+
+Arrow function:-
+---------------
+
+* The arrow function doesn't create a this object.
+
+
+Closures:- 
+---------
+
+var increment= function incr()
+{
+	var a=0
+	var plus = function()
+	{
+		a=a+1
+		console.log(a)
+	}
+	return plus;
+}();
+
+increment()
+increment()
+increment()
+increment()
+
+Event Bubbling:-
+---------------
+
+when the function traverse from child element to parent or vice versa
+
+Promises:-
+---------
+
+something that is assured it will be done in the future
+
+state - fulfilled/resolved , rejected, pending, settled
+value - data returned by resolver/rejected function
+
+//all the promise is successful then it is executed
+Promise.all(promise1, promise2, promise3)
+
+//all the promises are executed then it will executed
+Promise.allSettled(promise1, promise2, promise3)
+
+Async/Await:-
+-----------
+
+Destructuring:-
+-------------
+
+let emp={"name":"Prakash","age":35,"salary":60000,"designation":"Tester"}
+
+let {name,age,salary,designation="Tester"}=emp
+
+console.log("Name "+name)
+console.log("Age "+age)
+console.log("Salary "+salary)
+console.log("Designation "+designation)
+
+
+Scope:-
+------
+
+* Whatever i mention inside the function without var is is accessed anywhere.
+* If it is mentioned as var then it is not accessible
+* var is function scope (var a=10)
+* nothing is global scope ( a=10)
+* let is block scope
+* we can redeclare var but not let
+* Global variables are created only if it is declared.
+
+* const vs readonly
+	* Const cannot be used as instance variable in class. It can be defined as readonly.
+
+
+
+
+
+ 

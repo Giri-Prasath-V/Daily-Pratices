@@ -1,0 +1,41 @@
+Module-based:-
+-------------
+
+Command : ng new filename --no-standalone
+Command to create custom module : ng g module name
+
+
+imports
+exports
+Bootstrap
+declarations : Components, Pipes, Directives
+Providers
+
+Routing:-
+--------
+
+route guard => 
+
+Gradle:-
+--------
+
+create gradle app : gradle init
+
+open built.gradle write code to create task
+
+
+
+gradle compileJava => compile project
+
+gradle clean => to clean
+
+gradle test => to test
+
+gradle jar => to create jar
+
+gradle run => to run
+
+
+
+
+

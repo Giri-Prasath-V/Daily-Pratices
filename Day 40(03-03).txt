@@ -1,0 +1,66 @@
+ES5:-
+----
+Exponential operator
+Event Bubbling
+Closures
+
+ES6/ECMAScript Features:-
+-------------
+Arrow functions
+Classes
+OOPs
+let
+const
+Spread
+Rest
+Template literals
+for-in
+for-of
+
+Promises
+async
+await
+default params
+Deconstructing/ Destructuring
+Modules
+Import/Export
+
+ES7/TypeScript:-
+--------------
+Type safe
+interface
+Generics
+Access specifiers
+
+
+TypeScript -> JavaScript -> Execute
+
+* there no constructor overloading in typescript
+* In Inheritance need to mention super() in derived class
+
+
+Interface:-
+
+* Variable cannot be initialized.
+* Method does not contain body
+* Create object directly for interface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
