@@ -1,0 +1,11 @@
+Spring Data JPA:-
+---------------
+
+JDBC (Technology)
+ORM (Concpet)
+Hibernate (Frameworks)
+JPA (Specification)
+
+method start with get or find
+next by after attribute name
+

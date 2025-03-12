@@ -1,0 +1,70 @@
+@ResponseBody => if we pass only html tag in function then use this in my controller
+
+REST API:- (Representational State Transfer)
+--------
+
+* It is resources oriented architecture.
+* It supports JSON/XML/CSV/Plain etc.
+* Easy to configure
+* Uses http protocols
+
+
+Http methods:-
+-------------
+   
+GET    - Retrive    - SELECT
+POST   - Create     - INSERT
+PUT    - Update     - Update
+PATCH  - Update     - Update
+DELETE - Delete     - Delete
+
+
+Content Negotiation:-
+--------------------
+
+Default is html.
+produces= text/html or text/plain or text/xml
+
+Browser by default support GetMapping method.
+PostMapping is used when submitting forms
+
+REST API Test tools:-
+-------------------
+Postman
+SOAP UI
+ARC
+Swagger
+
+
+REST Parameter types:-
+---------------------
+
+*Query Parameter
+*Path Parameter
+*Body Parameter
+
+
+
+
+
+Student
+--------
+rollNo
+name
+standard
+school
+percentage
+ 
+ 
+/students			 - get all students
+/student/rollNo			 - get specific student with given rollNo
+/students/school?name=DPS	 - get all students of that school
+/students/result?pass=true/false - all students above 40% / below 40%
+/students/5/count		 - how many students in 5th standard
+/students/strength?school=DPS	 - total strength for given school name
+/students/toppers		 - top 5 percentage students
+/students/topper/3		 - topper of 3rd standard
+
+has context menu
+
+
